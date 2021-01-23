@@ -1,0 +1,20 @@
+name: 'Free Weekend'
+description: 'Ignore pesky pull requests on weekends. Enjoy your holiday!'
+author: 'Cristopher Namchee'
+inputs:
+  access_token:
+    description: 'GitHub action token'
+    required: true
+  timezone_offset:
+    description: 'Timezone offset relative to UTC timezone'
+    required: false
+    default: 0
+  message:
+    description: 'Reply contents'
+    required: false
+    default: |
+      I'm sorry, but I don't accept any pull requests on weekends. I think you should enjoy your holiday too!
+      Feel free to re-submit it on weekdays according to my timezone.
+
+      Closed.
+
