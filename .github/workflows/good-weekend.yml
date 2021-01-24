@@ -1,0 +1,12 @@
+on:
+  pull_request:
+    types: [opened] # DO NOT add other triggers!
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: good-weekend
+        uses: Namchee/good-weekend@v1.0
+        with:
+          access_token: ${{ secrets.ACCESS_TOKEN }}
