@@ -17,4 +17,9 @@ inputs:
       Feel free to re-submit it on weekdays according to my timezone.
 
       Closed.
-
+runs:
+  using: docker
+  image: 'Dockerfile'
+branding:
+  icon: 'git-pull-request'
+  color: 'black'
