@@ -5,10 +5,10 @@ inputs:
   access_token:
     description: 'GitHub action token'
     required: true
-  timezone_offset:
-    description: 'Timezone offset relative to UTC timezone'
+  timezone:
+    description: 'Timezone location, according to tz database'
     required: false
-    default: 0
+    default: 'UTC'
   message:
     description: 'Reply contents'
     required: false
