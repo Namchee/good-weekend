@@ -109,7 +109,7 @@ func main() {
 
 	day := pullRequest.GetCreatedAt().In(config.location).Weekday()
 
-	if day == 7 || day == 0 { // if PR is submitted on weekends, close it
+	if day == 6 || day == 0 { // if PR is submitted on weekends, close it
 		err = closePullRequest(
 			&ctx,
 			client,
