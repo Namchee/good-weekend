@@ -25,6 +25,7 @@ type Configuration struct {
 	token    string
 	location *time.Location
 	message  string
+	label    string
 }
 
 type Repository struct {
@@ -47,11 +48,13 @@ func getConfiguration() *Configuration {
 	}
 
 	message := os.Getenv("INPUT_MESSAGE")
+	label := os.Getenv("INPUT_LABEL")
 
 	return &Configuration{
 		token,
 		location,
 		message,
+		label,
 	}
 }
 
@@ -113,7 +116,7 @@ func main() {
 		err = closePullRequest(
 			&ctx,
 			client,
-			config.message,
+			config,
 			repository.name,
 			repository.owner,
 			pullRequest.GetNumber(),
@@ -128,7 +131,7 @@ func main() {
 func closePullRequest(
 	ctx *context.Context,
 	client *github.Client,
-	reason string,
+	config *Configuration,
 	repository string,
 	owner string,
 	number int,
@@ -139,7 +142,7 @@ func closePullRequest(
 		repository,
 		number,
 		&github.IssueComment{
-			Body: github.String(reason),
+			Body: github.String(config.message),
 		},
 	)
 
@@ -152,7 +155,7 @@ func closePullRequest(
 		owner,
 		repository,
 		number,
-		[]string{"good-weekend"},
+		[]string{config.label},
 	)
 
 	if err != nil {
