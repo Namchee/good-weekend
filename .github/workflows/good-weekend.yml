@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: good-weekend
-        uses: Namchee/good-weekend@v1.0
+        uses: Namchee/good-weekend@v1.1
         with:
           access_token: ${{ secrets.ACCESS_TOKEN }}
