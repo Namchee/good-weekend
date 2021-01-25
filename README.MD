@@ -1,5 +1,7 @@
 # Good Weekend
 
+[![Go Version](https://img.shields.io/github/go-mod/go-version/namchee/good-weekend)](https://github.com/Namchee/good-weekend)
+
 Good Weekend is a simple GitHub Action that automatically rejects any pull requests submitted on weekends. Enjoy your hassle-free weekends!
 
 ## Usage
@@ -33,7 +35,8 @@ Name | Required? | Default | Description
 ---- | --------- | ------- | -----------
 `access_token` | `true` | | [GitHub's access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) which is used to interact with GitHub's API. It is recommended to store this with [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets)
 `timezone` | `false` | `UTC` | Timezone location on [tz database](https://www.iana.org/time-zones). [Cheatsheet](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-`message` | `false` | [See here](./action.yml) | Message to be shown on weekend pull request
+`message` | `false` | [See here](./action.yml) | Message to be shown on weekend-submitted pull requests
+`label` | `false` | `good-weekend` | Label to be added on weekend-submitted pull requests
 
 For more information, please refer to the [action metadata](./action.yml)
 
