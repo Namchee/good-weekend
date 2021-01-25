@@ -9,6 +9,10 @@ inputs:
     description: 'Timezone location, according to tz database'
     required: false
     default: 'UTC'
+  label:
+    description: 'Label to be added on pull requests'
+    required: false
+    default: 'good-weekend'
   message:
     description: 'Reply contents'
     required: false
